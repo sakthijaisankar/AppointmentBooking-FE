@@ -27,6 +27,7 @@ export default function AppLayout() {
             <Link to="/staff/appointments">Appointments</Link>
             <Link to="/admin/patient-priority/1">Patient Priority</Link>
             <Link to="/admin/doctors">Manage Doctors</Link>
+            <Link to="/admin/queue">Queue Board</Link>
           </>
         )}
         {hasAnyRole(['Patient']) && (
@@ -35,6 +36,7 @@ export default function AppLayout() {
             <Link to="/doctors">Find Doctors</Link>
             <Link to="/patient/book-appointment">Book Appointment</Link>
             <Link to="/patient/appointments">My Appointments</Link>
+            <Link to="/patient/queue">Queue Status</Link>
           </>
         )}
           <span className="app-nav__user">{user?.fullName}</span>

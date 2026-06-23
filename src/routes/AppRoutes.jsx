@@ -10,7 +10,9 @@ import ResetPasswordPage from '../pages/auth/ResetPasswordPage';
 import ProfilePage from '../pages/auth/ProfilePage';
 import DashboardPage, { UnauthorizedPage } from '../pages/auth/DashboardPage';
 import PatientPriorityPage from '../pages/admin/PatientPriorityPage';
+import QueueDashboardPage from '../pages/admin/QueueDashboardPage';
 import PatientProfilePage from '../pages/patients/PatientProfilePage';
+import PatientQueuePage from '../pages/patients/PatientQueuePage';
 import PatientListPage from '../pages/patients/PatientListPage';
 import DoctorListPage from '../pages/admin/DoctorListPage';
 import DoctorDetailPage from '../pages/admin/DoctorDetailPage';
@@ -56,6 +58,7 @@ export default function AppRoutes() {
                 <Route path="/patient/book-appointment" element={<BookAppointmentPage />} />
                 <Route path="/patient/appointments" element={<PatientAppointmentsPage />} />
                 <Route path="/patient/submit-symptoms/:appointmentId" element={<SubmitSymptomsPage />} />
+                <Route path="/patient/queue" element={<PatientQueuePage />} />
               </Route>
             </Route>
 
@@ -67,6 +70,7 @@ export default function AppRoutes() {
                 <Route path="/admin/doctors" element={<DoctorListPage />} />
                 <Route path="/admin/doctors/:doctorId" element={<DoctorDetailPage />} />
                 <Route path="/staff/appointments" element={<StaffAppointmentsPage />} />
+                <Route path="/admin/queue" element={<QueueDashboardPage />} />
               </Route>
             </Route>
 

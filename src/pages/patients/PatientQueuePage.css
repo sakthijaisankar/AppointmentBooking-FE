@@ -1,0 +1,380 @@
+.patient-queue-page {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #1f2937;
+}
+
+.patient-queue-page.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.patient-queue-page .page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.patient-queue-page h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.patient-queue-page .page-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Not Checked-in view */
+.status-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+}
+
+.status-card.error {
+  border-color: #fecaca;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.status-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+.status-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.status-desc {
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.instructions-box {
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+}
+
+.instructions-box h4 {
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  color: #374151;
+}
+
+.instructions-box ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.instructions-box li {
+  margin-bottom: 0.5rem;
+}
+
+.btn-refresh {
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(37,99,235,0.15);
+  transition: background-color 0.2s;
+}
+
+.btn-refresh:hover {
+  background-color: #1d4ed8;
+}
+
+/* Ticket Design */
+.ticket-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 20px;
+  color: #fff;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.ticket-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.ticket-card.waiting::before { background-color: #9ca3af; }
+.ticket-card.calling::before { background-color: #3b82f6; }
+.ticket-card.in_consultation::before { background-color: #10b981; }
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(255,255,255,0.15);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.clinic-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+}
+
+.ticket-card .status-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ticket-card .status-badge.waiting { background-color: rgba(255,255,255,0.15); color: #fff; }
+.ticket-card .status-badge.calling { background-color: #2563eb; color: #fff; }
+.ticket-card .status-badge.in_consultation { background-color: #10b981; color: #fff; }
+
+.ticket-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .ticket-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.ticket-num-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-num-box .lbl {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.ticket-num-box .num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.ticket-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .ticket-details {
+    text-align: left;
+  }
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item .label {
+  font-size: 0.7rem;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.detail-item .value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.ticket-footer {
+  border-top: 1px dashed rgba(255,255,255,0.15);
+  padding-top: 1.25rem;
+  text-align: center;
+}
+
+.ticket-footer p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Ticket circles cutout aesthetics */
+.footer-circle {
+  position: absolute;
+  bottom: 50px;
+  width: 20px;
+  height: 20px;
+  background-color: #fafafa; /* Match main page background */
+  border-radius: 9999px;
+  z-index: 10;
+}
+
+.footer-circle.left {
+  left: -10px;
+}
+
+.footer-circle.right {
+  right: -10px;
+}
+
+/* Metrics Section */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 576px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.metric-card .icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.metric-card .info {
+  flex-grow: 1;
+}
+
+.metric-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.05em;
+}
+
+.metric-card .value {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.metric-card .value .unit {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.metric-card .value .immediate-val {
+  font-size: 1.5rem;
+  color: #10b981;
+}
+
+.metric-card .desc {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.text-calling { color: #2563eb; }
+.text-consulting { color: #10b981; }
+.text-next { color: #d97706; }
+
+.refresh-container {
+  text-align: center;
+}
+
+.btn-refresh.secondary {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  box-shadow: none;
+  border: 1px solid #e5e7eb;
+}
+
+.btn-refresh.secondary:hover {
+  background-color: #e5e7eb;
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
