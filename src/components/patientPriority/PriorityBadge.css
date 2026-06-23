@@ -1,0 +1,21 @@
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.priority-badge--sm {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.priority-badge--lg {
+  font-size: 0.875rem;
+  padding: 0.35rem 1rem;
+}

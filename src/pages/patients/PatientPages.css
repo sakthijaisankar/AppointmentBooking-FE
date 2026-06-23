@@ -1,0 +1,140 @@
+.patient-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.patient-code {
+  color: var(--text-muted, #6b7280);
+  margin-bottom: 1rem;
+}
+
+.patient-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.patient-tabs button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border, #e5e7eb);
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.patient-tabs button.active {
+  background: var(--accent, #aa3bff);
+  color: #fff;
+  border-color: var(--accent, #aa3bff);
+}
+
+.patient-card {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.patient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.patient-card label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.patient-card input,
+.patient-card select,
+.patient-card textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.patient-btn {
+  background: var(--accent, #aa3bff);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.patient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.patient-list li {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.patient-list .badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.patient-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.patient-success {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.patient-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem;
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-table th,
+.patient-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+}
+
+.patient-pagination {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}

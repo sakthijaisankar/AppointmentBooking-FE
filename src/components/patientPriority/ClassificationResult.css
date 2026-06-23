@@ -1,0 +1,85 @@
+.classification-result {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.classification-result--empty {
+  text-align: center;
+  color: var(--text-muted, #6b7280);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.result-header h3 {
+  margin: 0;
+}
+
+.result-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.result-details dt {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+  text-transform: uppercase;
+}
+
+.result-details dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.result-reason {
+  font-size: 0.9rem;
+  color: var(--text, #374151);
+  margin-bottom: 1rem;
+}
+
+.result-override {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.override-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.override-section h4 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.override-section select,
+.override-section textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 8px;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent, #aa3bff);
+  color: var(--accent, #aa3bff);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+}
