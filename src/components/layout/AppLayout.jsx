@@ -24,11 +24,18 @@ export default function AppLayout() {
         {hasAnyRole(['Admin', 'Doctor', 'Receptionist']) && (
           <>
             <Link to="/staff/patients">Patients</Link>
+            <Link to="/staff/appointments">Appointments</Link>
             <Link to="/admin/patient-priority/1">Patient Priority</Link>
+            <Link to="/admin/doctors">Manage Doctors</Link>
           </>
         )}
         {hasAnyRole(['Patient']) && (
-          <Link to="/patient/profile">My Health Profile</Link>
+          <>
+            <Link to="/patient/profile">My Health Profile</Link>
+            <Link to="/doctors">Find Doctors</Link>
+            <Link to="/patient/book-appointment">Book Appointment</Link>
+            <Link to="/patient/appointments">My Appointments</Link>
+          </>
         )}
           <span className="app-nav__user">{user?.fullName}</span>
           <button type="button" className="app-nav__logout" onClick={handleLogout}>

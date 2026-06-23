@@ -12,6 +12,13 @@ import DashboardPage, { UnauthorizedPage } from '../pages/auth/DashboardPage';
 import PatientPriorityPage from '../pages/admin/PatientPriorityPage';
 import PatientProfilePage from '../pages/patients/PatientProfilePage';
 import PatientListPage from '../pages/patients/PatientListPage';
+import DoctorListPage from '../pages/admin/DoctorListPage';
+import DoctorDetailPage from '../pages/admin/DoctorDetailPage';
+import DoctorBrowsePage from '../pages/patients/DoctorBrowsePage';
+import BookAppointmentPage from '../pages/patients/BookAppointmentPage';
+import PatientAppointmentsPage from '../pages/patients/PatientAppointmentsPage';
+import StaffAppointmentsPage from '../pages/admin/StaffAppointmentsPage';
+import SubmitSymptomsPage from '../pages/patients/SubmitSymptomsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -45,6 +52,10 @@ export default function AppRoutes() {
             <Route element={<ProtectedRoute roles={['Patient']} />}>
               <Route element={<AppLayout />}>
                 <Route path="/patient/profile" element={<PatientProfilePage />} />
+                <Route path="/doctors" element={<DoctorBrowsePage />} />
+                <Route path="/patient/book-appointment" element={<BookAppointmentPage />} />
+                <Route path="/patient/appointments" element={<PatientAppointmentsPage />} />
+                <Route path="/patient/submit-symptoms/:appointmentId" element={<SubmitSymptomsPage />} />
               </Route>
             </Route>
 
@@ -53,6 +64,9 @@ export default function AppRoutes() {
               <Route element={<AppLayout />}>
                 <Route path="/staff/patients" element={<PatientListPage />} />
                 <Route path="/admin/patient-priority/:patientId" element={<PatientPriorityPage />} />
+                <Route path="/admin/doctors" element={<DoctorListPage />} />
+                <Route path="/admin/doctors/:doctorId" element={<DoctorDetailPage />} />
+                <Route path="/staff/appointments" element={<StaffAppointmentsPage />} />
               </Route>
             </Route>
 
