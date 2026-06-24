@@ -2,70 +2,178 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f8fafc;
 }
 
 .app-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid var(--border, #e5e7eb);
-  background: var(--surface, #fff);
+  padding: 0.85rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.01);
+}
+
+/* Brand logo */
+.app-nav__brand-box {
+  display: flex;
+  align-items: center;
 }
 
 .app-nav__brand {
-  font-weight: 700;
-  color: var(--text, #111);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.03em;
 }
 
-.app-nav__links a {
-  margin-left: 1rem;
-  color: var(--accent, #aa3bff);
+.brand-logo {
+  font-size: 1.4rem;
+}
+
+/* Middle Menu Links */
+.app-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-menu-link {
+  color: #475569;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.app-nav__user {
-  margin-left: 1rem;
-  font-size: 0.85rem;
-  color: var(--text-muted, #6b7280);
+.nav-menu-link:hover {
+  background-color: #f1f5f9;
+  color: #4f46e5;
 }
 
-.app-nav__logout {
-  margin-left: 0.75rem;
-  background: transparent;
-  border: 1px solid var(--border, #d1d5db);
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
+/* Right Side User Zone */
+.app-nav__user-zone {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
 
-.app-main {
-  flex: 1;
-}
-
+/* Notification Bell */
 .app-nav__bell {
   position: relative;
   text-decoration: none;
-  font-size: 1.2rem;
-  margin-left: 1rem;
+  font-size: 1.3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s;
+}
+
+.app-nav__bell:hover {
+  transform: scale(1.05);
 }
 
 .unread-badge {
   position: absolute;
-  top: -6px;
-  right: -8px;
+  top: -4px;
+  right: -6px;
   background-color: #ef4444;
-  color: #fff;
+  color: #ffffff;
   border-radius: 9999px;
   font-size: 0.65rem;
   font-weight: 800;
   padding: 0.15rem 0.35rem;
   line-height: 1;
-  border: 1.5px solid #fff;
+  border: 2px solid #ffffff;
+}
+
+/* User Profile Pill */
+.app-nav__user-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f1f5f9;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+.user-icon {
+  font-size: 0.95rem;
+}
+
+.user-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Logout Button */
+.app-nav__logout-btn {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.45rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.app-nav__logout-btn:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.app-nav__logout-btn:active {
+  transform: scale(0.97);
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .app-nav {
+    padding: 0.85rem 1rem;
+  }
+  .nav-menu-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  .app-nav__user-zone {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .app-nav__menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

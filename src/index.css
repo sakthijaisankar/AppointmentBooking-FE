@@ -55,11 +55,7 @@ body {
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -71,6 +67,7 @@ h2 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
+  line-height: 1.2;
 }
 
 h1 {
@@ -108,4 +105,32 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Global Form Controls Accessibility & Legibility Enhancements */
+input, 
+select, 
+textarea {
+  color: var(--text-h, #08060d);
+  background-color: var(--bg, #ffffff);
+  border: 1px solid var(--border, #cbd5e1);
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Ensure select option texts are visible in both light/dark mode and across OS defaults */
+select option {
+  background-color: var(--bg, #ffffff);
+  color: var(--text-h, #08060d);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent, #6366f1);
+  box-shadow: 0 0 0 3px var(--accent-bg, rgba(99, 102, 241, 0.15));
 }

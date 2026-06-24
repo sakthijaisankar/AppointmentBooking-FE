@@ -19,38 +19,44 @@ export default function AppLayout() {
   return (
     <div className="app-layout">
       <nav className="app-nav">
-        <Link to="/dashboard" className="app-nav__brand">
-          Clinic Appointment Booking
-        </Link>
-        <div className="app-nav__links">
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/profile">Profile</Link>
+        <div className="app-nav__brand-box">
+          <Link to="/dashboard" className="app-nav__brand">
+            <span className="brand-logo">🏥</span> ClinixCare
+          </Link>
+        </div>
+
+        <div className="app-nav__menu">
+          <Link to="/dashboard" className="nav-menu-link">Dashboard</Link>
           {hasAnyRole(['Admin', 'Doctor', 'Receptionist']) && (
             <>
-              <Link to="/admin/dashboard">Admin Dashboard</Link>
-              <Link to="/staff/patients">Patients</Link>
-              <Link to="/staff/appointments">Appointments</Link>
-              <Link to="/admin/patient-priority/1">Patient Priority</Link>
-              <Link to="/admin/doctors">Manage Doctors</Link>
-              <Link to="/admin/queue">Queue Board</Link>
-              <Link to="/admin/notifications/templates">Template Settings</Link>
+              <Link to="/admin/dashboard" className="nav-menu-link">Analytics</Link>
+              <Link to="/staff/patients" className="nav-menu-link">Patients</Link>
+              <Link to="/staff/appointments" className="nav-menu-link">Appointments</Link>
+              <Link to="/admin/queue" className="nav-menu-link">Queue Board</Link>
+              <Link to="/admin/doctors" className="nav-menu-link">Doctors</Link>
             </>
           )}
           {hasAnyRole(['Patient']) && (
             <>
-              <Link to="/patient/profile">My Health Profile</Link>
-              <Link to="/doctors">Find Doctors</Link>
-              <Link to="/patient/book-appointment">Book Appointment</Link>
-              <Link to="/patient/appointments">My Appointments</Link>
-              <Link to="/patient/queue">Queue Status</Link>
+              <Link to="/patient/profile" className="nav-menu-link">My Health</Link>
+              <Link to="/doctors" className="nav-menu-link">Find Doctors</Link>
+              <Link to="/patient/book-appointment" className="nav-menu-link">Book Consult</Link>
+              <Link to="/patient/appointments" className="nav-menu-link">My Booking</Link>
+              <Link to="/patient/queue" className="nav-menu-link">Queue Status</Link>
             </>
           )}
+        </div>
+
+        <div className="app-nav__user-zone">
           <Link to="/notifications" className="app-nav__bell" title="My Notifications">
             🔔
             {unreadCount > 0 && <span className="unread-badge">{unreadCount}</span>}
           </Link>
-          <span className="app-nav__user">{user?.fullName}</span>
-          <button type="button" className="app-nav__logout" onClick={handleLogout}>
+          <div className="app-nav__user-pill">
+            <span className="user-icon">👤</span>
+            <span className="user-name" title={user?.fullName}>{user?.fullName?.split(' ')[0]}</span>
+          </div>
+          <button type="button" className="app-nav__logout-btn" onClick={handleLogout}>
             Logout
           </button>
         </div>
