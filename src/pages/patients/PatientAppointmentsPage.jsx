@@ -163,6 +163,18 @@ export default function PatientAppointmentsPage() {
                     </div>
                   )}
                 </div>
+
+                {apt.statusName === 'Completed' && (
+                  <div className="apt-actions">
+                    <Link
+                      to={`/patient/consultations/${apt.appointmentId}`}
+                      className="action-btn-sm confirm"
+                      style={{ textDecoration: 'none', display: 'inline-block' }}
+                    >
+                      View Prescription
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -167,6 +167,13 @@ export default function QueueDashboardPage() {
                         <div className="btn-group">
                           <button
                             type="button"
+                            className="btn-start"
+                            onClick={() => navigate(`/admin/consultations/${item.appointmentId}`)}
+                          >
+                            Consultation
+                          </button>
+                          <button
+                            type="button"
                             className="btn-complete"
                             onClick={() => handleStatusUpdate(item.queueId, 'COMPLETED')}
                             disabled={updateStatusMutation.isPending}

@@ -21,6 +21,11 @@ import BookAppointmentPage from '../pages/patients/BookAppointmentPage';
 import PatientAppointmentsPage from '../pages/patients/PatientAppointmentsPage';
 import StaffAppointmentsPage from '../pages/admin/StaffAppointmentsPage';
 import SubmitSymptomsPage from '../pages/patients/SubmitSymptomsPage';
+import ConsultationFormPage from '../pages/admin/ConsultationFormPage';
+import ConsultationViewPage from '../pages/patients/ConsultationViewPage';
+import NotificationsListPage from '../pages/patients/NotificationsListPage';
+import NotificationTemplatesPage from '../pages/admin/NotificationTemplatesPage';
+import AdminDashboardPage from '../pages/admin/AdminDashboardPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,6 +52,7 @@ export default function AppRoutes() {
                 <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/notifications" element={<NotificationsListPage />} />
               </Route>
             </Route>
 
@@ -58,6 +64,7 @@ export default function AppRoutes() {
                 <Route path="/patient/book-appointment" element={<BookAppointmentPage />} />
                 <Route path="/patient/appointments" element={<PatientAppointmentsPage />} />
                 <Route path="/patient/submit-symptoms/:appointmentId" element={<SubmitSymptomsPage />} />
+                <Route path="/patient/consultations/:appointmentId" element={<ConsultationViewPage />} />
                 <Route path="/patient/queue" element={<PatientQueuePage />} />
               </Route>
             </Route>
@@ -70,7 +77,10 @@ export default function AppRoutes() {
                 <Route path="/admin/doctors" element={<DoctorListPage />} />
                 <Route path="/admin/doctors/:doctorId" element={<DoctorDetailPage />} />
                 <Route path="/staff/appointments" element={<StaffAppointmentsPage />} />
+                <Route path="/admin/consultations/:appointmentId" element={<ConsultationFormPage />} />
                 <Route path="/admin/queue" element={<QueueDashboardPage />} />
+                <Route path="/admin/notifications/templates" element={<NotificationTemplatesPage />} />
+                <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
               </Route>
             </Route>
 

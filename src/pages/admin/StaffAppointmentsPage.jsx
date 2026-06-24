@@ -185,6 +185,15 @@ export default function StaffAppointmentsPage() {
                             Complete
                           </button>
                         )}
+                        {(apt.statusName === 'InProgress' || apt.statusName === 'Completed') && (
+                          <button
+                            type="button"
+                            className="action-btn-sm start"
+                            onClick={() => navigate(`/admin/consultations/${apt.appointmentId}`)}
+                          >
+                            Consultation
+                          </button>
+                        )}
                         {(apt.statusName === 'Pending' ||
                           apt.statusName === 'Confirmed' ||
                           apt.statusName === 'InProgress') && (
